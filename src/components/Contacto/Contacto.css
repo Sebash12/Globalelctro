@@ -1,0 +1,10 @@
+.datos{
+    text-align: center; 
+}
+table {
+    width: 100px;
+    margin: 0 auto;
+}
+td{
+    padding: 10px;
+}

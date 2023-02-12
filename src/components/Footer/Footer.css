@@ -1,0 +1,11 @@
+.footer-zone{
+    /* Posicionar abajo */
+  position: relative;
+  bottom: 0;
+  /* Ocupar todo el ancho disponible */
+  width: 100%;
+  min-height: 10vh;
+  background-color: #021f3f;
+  color: white;
+}
+
