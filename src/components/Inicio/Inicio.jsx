@@ -15,15 +15,23 @@ const Inicio = () => {
     //console.log(id);
     dispatch({ type: TYPES.AGREGAR_CARRITO, payload: id });
   };
-  const delFromCart = () => {};
-  const clearCart = () => {};
+  const delFromCart = (id,all=false) => {
+    //console.log(id,all)
+    if(all){
+      dispatch({type:TYPES.REMOVER_TODO_CARRITO,payload:id})
+    }
+    else{
+      dispatch({type:TYPES.REMOVER_ELEMENTO_CARRITO,payload:id})
+    }
+  };
+  const clearCart = () => {
+    dispatch({ type: TYPES.LIMPIAR_TODO_CARRITO });
+  };
 
-  /* Para ingresar mas productos se podria realizar la lectura en bases de datos de los mismos,
-    ingresandole su respectivo titulo, la url donde se encuentra la imagen, el precio y la 
-    descripcion del producto, esto con el fin de realizar una pagina web facilmente escalable. */
   return (
     <div>
       <h2 className="tituloInicio">Nuestros Servicios</h2>
+
       <div className="contenedorProductos">
         {products.map((product) => (
           <TarjetaProductos
@@ -33,6 +41,7 @@ const Inicio = () => {
           />
         ))}
         <div className="Lista_Productos">
+        <button onClick={clearCart}>Limpiar Carrito</button>
           {cart.map((item, index) => (
             <Carro_Item key={index} data={item} delFromCart={delFromCart} />
           ))}

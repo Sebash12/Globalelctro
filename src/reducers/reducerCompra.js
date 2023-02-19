@@ -57,7 +57,7 @@ export const estadoInicialCompra = {
       imagen: "/src/components/Imagenes/Nevera.jpeg",
       precio: 300000,
       descripcion: "Descripción del producto 8",
-    }
+    },
   ],
   cart: [],
 };
@@ -85,11 +85,32 @@ export function reducerCompra(state, action) {
           };
     }
     case TYPES.REMOVER_ELEMENTO_CARRITO: {
+      let item_para_remover = state.cart.find(
+        (item) => item.id === action.payload
+      );
+
+      return item_para_remover.cantidad > 1
+        ? {
+            ...state,
+            cart: state.cart.map((item) =>
+              item.id === action.payload
+                ? { ...item, cantidad: item.cantidad - 1 }
+                : { ...item }
+            ),
+          }
+        : {
+            ...state,
+            cart: state.cart.filter((item) => item.id !== action.payload),
+          };
     }
     case TYPES.REMOVER_TODO_CARRITO: {
+      return{
+        ...state,
+        cart: state.cart.filter((item) => item.id !== action.payload),
+      };
     }
-    case TYPES.LIMPIAR_TODO_CARRITO: {
-    }
+    case TYPES.LIMPIAR_TODO_CARRITO:
+      return estadoInicialCompra;
     default:
       return state;
   }
