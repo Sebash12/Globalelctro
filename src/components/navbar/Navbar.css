@@ -1,3 +1,11 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -21,7 +29,18 @@ ul {
   .logo{
     float: right;
   }
+  .listaCompras{
+    float: right;
+    height: 2em;
+    margin-top: 6vh;
+  }
+
   li a{
     position: relative;
-    margin-top:40px;;
+    margin-top:20px;
+    margin-left: 10px;
+  }
+
+  nav{
+    width: 100%;
   }

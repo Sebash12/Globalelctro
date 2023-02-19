@@ -3,9 +3,7 @@ function Footer()
 {
 return(
     <div id="footer">
-        <div className="footer-zone">
-            <p>Centro autorizado por Electrolux Colombia</p>
-        </div>
+        <p>Centro autorizado por Electrolux Colombia</p>
     </div>
 )
 }

@@ -1,0 +1,10 @@
+.contenedorCarrito{
+    margin: 0 auto;
+    width: 20%;
+    background-color: #213547;
+    color: white;
+}
+.botones{
+    margin: 5px;
+    width: 40%;
+}
