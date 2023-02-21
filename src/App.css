@@ -58,3 +58,7 @@ body, html {
 .read-the-docs {
   color: #888;
 }
+*:focus
+{
+  outline: none
+}

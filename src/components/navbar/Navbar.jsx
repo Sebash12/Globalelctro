@@ -1,5 +1,4 @@
 import "./Navbar.css";
-
 function Navbar() {
   const abrirVentana = () => {
     window.open("https://www.ejemplo.com", "_blank");
@@ -21,7 +20,6 @@ function Navbar() {
           <a href="/">
             <img className="logo" src="/Logo.jpg" alt="logo" />
           </a>
-          <button onClick={abrirVentana}>Hola</button>
         </ul>
       </nav>
     </div>

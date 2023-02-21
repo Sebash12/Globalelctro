@@ -60,15 +60,17 @@ export const estadoInicialCompra = {
     },
   ],
   cart: [],
+  totalQuantity: 0,
 };
 
 export function reducerCompra(state, action) {
+
   switch (action.type) {
     case TYPES.AGREGAR_CARRITO: {
       let nuevoItem = state.products.find(
         (product) => product.id === action.payload
       );
-      //console.log(nuevoItem)
+
       let itemEnCarrito = state.cart.find((item) => item.id === nuevoItem.id);
       return itemEnCarrito
         ? {
@@ -78,13 +80,16 @@ export function reducerCompra(state, action) {
                 ? { ...item, cantidad: item.cantidad + 1 }
                 : item
             ),
+            totalQuantity: state.totalQuantity + 1,
           }
         : {
             ...state,
             cart: [...state.cart, { ...nuevoItem, cantidad: 1 }],
+            totalQuantity: state.totalQuantity + 1,            
           };
     }
     case TYPES.REMOVER_ELEMENTO_CARRITO: {
+
       let item_para_remover = state.cart.find(
         (item) => item.id === action.payload
       );
@@ -97,18 +102,15 @@ export function reducerCompra(state, action) {
                 ? { ...item, cantidad: item.cantidad - 1 }
                 : { ...item }
             ),
+            totalQuantity: state.totalQuantity - 1,
           }
         : {
             ...state,
             cart: state.cart.filter((item) => item.id !== action.payload),
+            totalQuantity: state.totalQuantity - 1,
           };
     }
-    case TYPES.REMOVER_TODO_CARRITO: {
-      return{
-        ...state,
-        cart: state.cart.filter((item) => item.id !== action.payload),
-      };
-    }
+
     case TYPES.LIMPIAR_TODO_CARRITO:
       return estadoInicialCompra;
     default:
