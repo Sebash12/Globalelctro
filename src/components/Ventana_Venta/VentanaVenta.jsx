@@ -1,12 +1,14 @@
-const info = localStorage.getItem("cart");
 const cart = JSON.parse(localStorage.getItem("cart"));
 const cantidad_productos = cart.length
 const listaNombres = cart.map((producto) =>
-<li key={producto.id}>{producto.titulo } x {producto.cantidad} - Precio: {producto.precio * producto.cantidad}</li>
+<li key={producto.id}> 
+  {producto.titulo } x {producto.cantidad} - Precio: {producto.precio * producto.cantidad}
+<img  src={producto.imagen}></img>
+</li>
 );
 
 
-const Ventas = (props) => {
+const Ventas = () => {
   
   function calculaTotal(cantidad_productos, precio){
     var result = cantidad_productos * precio;
