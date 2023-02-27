@@ -1,5 +1,8 @@
 const cart = JSON.parse(localStorage.getItem("cart"));
-const cantidad_productos = cart.length
+if (cart) {
+  var cantidad_productos = cart.length;
+}
+
 const listaNombres = cart.map((producto) =>
 <li key={producto.id}> 
   {producto.titulo } x {producto.cantidad} - Precio: {producto.precio * producto.cantidad}
