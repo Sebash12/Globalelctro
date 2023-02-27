@@ -4,7 +4,6 @@ import Navbar from './components/navbar/Navbar'
 import Inicio from './components/Inicio/Inicio' 
 import Contacto from './components/Contacto/Contacto'
 import Footer from './components/Footer/Footer'
-import TarjetaProductos from './components/Tarjeta_Productos/tarjetaProductos'
 import Ventas from './components/Ventana_Venta/VentanaVenta'
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";  

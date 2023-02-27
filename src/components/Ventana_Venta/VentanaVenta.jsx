@@ -1,4 +1,4 @@
-const cart = JSON.parse(localStorage.getItem("cart"));
+const cart = JSON.parse(localStorage.getItem("cart")); //Creacion de un objeto a partir de una cadena
 if (cart) {
   var cantidad_productos = cart.length;
 }
