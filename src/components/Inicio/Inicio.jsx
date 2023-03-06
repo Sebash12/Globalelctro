@@ -6,33 +6,33 @@ import {
 } from "../../reducers/reducerCompra";
 import Carro_Item from "../Carro_Item/Carro_Item";
 import TarjetaProductos from "../Tarjeta_Productos/tarjetaProductos";
- 
+import "./Inicio.css";
+
+
 
 const Inicio = () => {
   const [state, dispatch] = useReducer(reducerCompra, estadoInicialCompra);
-  const { products, cart} = state;
+  const { products, cart } = state;
 
   const addToCart = (id) => {
     dispatch({ type: TYPES.AGREGAR_CARRITO, payload: id });
   };
-  const delFromCart = (id=false) => {    
-    dispatch({type:TYPES.REMOVER_ELEMENTO_CARRITO,payload:id})
+  const delFromCart = (id = false) => {
+    dispatch({ type: TYPES.REMOVER_ELEMENTO_CARRITO, payload: id });
   };
   const clearCart = () => {
     dispatch({ type: TYPES.LIMPIAR_TODO_CARRITO });
   };
 
- 
-  localStorage.setItem('cart', JSON.stringify(cart));
+  localStorage.setItem("cart", JSON.stringify(cart)); // Este es el que pasa la info entre ventanas...
+
+  function mostrar_Alerta() {
+    alert('¿Su compra está completa? Recuerde que de no ser asi será borrado');
+  }
+
 
   return (
-    <div>
-      <a href="/ventas">
-        <button>
-          <p>{state.totalQuantity}</p>
-          <img className="imagenCarrito" src="/src/components/Imagenes/Carrito.png"></img>
-        </button>
-      </a>
+    <div className="content">
       <h2 className="tituloInicio">Nuestros Servicios</h2>
       <div className="contenedorProductos">
         {products.map((product) => (
@@ -41,13 +41,25 @@ const Inicio = () => {
             data={product}
             addToCart={addToCart}
           />
-        ))} {/* Renderiza la parte inicial de las tarjetas */}
-        <div className="Lista_Productos">
-          <button onClick={clearCart}>Limpiar Carrito</button>
-          {cart.map((item, index) => (
-            <Carro_Item key={index} data={item} delFromCart={delFromCart} />
-          ))}
-        </div>
+        ))}{" "}
+        {/* Renderiza la parte inicial de las tarjetas */}
+      </div>
+
+      <div className="Lista_Productos">
+        <a href="/ventas">
+          <button onClick={mostrar_Alerta}>
+            <p>{state.totalQuantity}</p>
+            <img
+              className="imagenCarrito"
+              src="/src/components/Imagenes/Carrito.png"
+            ></img>
+          </button>
+        </a>
+
+        <button className="limpieza" onClick={clearCart}>Limpiar Carrito</button>
+        {cart.map((item, index) => (
+          <Carro_Item key={index} data={item} delFromCart={delFromCart} />
+        ))}
       </div>
     </div>
   );

@@ -6,8 +6,8 @@ export const estadoInicialCompra = {
       id: 1,
       titulo: "Producto 1",
       imagen: "/src/components/Imagenes/Nevera.jpeg",
-      precio: 1000000,
-      descripcion: "Descripción del producto 1",
+      precio: 2000000,
+      descripcion: "Descripcion producto 1",
     },
     {
       id: 2,
