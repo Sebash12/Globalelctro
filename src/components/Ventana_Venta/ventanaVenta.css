@@ -1,3 +1,45 @@
-.lista_Salida{
-    width: 100%;
+.contenedor {
+  border-radius: 10px;
+  text-align: center;
+  width:30%
 }
+
+.parrafo_Total {
+  font-size: 1.5rem;
+  font-weight:bold;
+}
+
+.lista_Salida {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+}
+
+
+
+.lista_Salida li {
+  margin-bottom: 20px;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  background-color: #213547;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  list-style: none;
+  border-radius: 5px;
+}
+
+.lista_Salida li img {
+  display: block;
+  margin: 0 auto;
+  max-width: 30%;
+  height: 10%;
+  width:40%;
+}
+
+.imagenLista {
+  max-width: 30px;
+  margin-left: 10px;
+}
+

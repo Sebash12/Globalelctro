@@ -11,7 +11,7 @@ function Carro_Item ({data,delFromCart}){
     let {id,titulo,imagen,precio,descripcion,cantidad}=data;
     return(
     <div className='contenedorCarrito'>
-        <h2>{titulo}</h2>
+        <h3 className='tituloProducto'>{titulo}</h3>
         <img source={imagen}></img>
         <h3>{formatPrice(precio)} x {cantidad} = {formatPrice(precio * cantidad)}</h3>
         <button className='botones' onClick={()=>delFromCart(id)}>Eliminar</button>

@@ -1,7 +1,15 @@
 import "./Navbar.css";
+import React, { useState } from "react";
+
 function Navbar() {
-  const abrirVentana = () => {
-    window.open("https://www.ejemplo.com", "_blank");
+  const [showContactList, setShowContactList] = useState(false);
+
+  const handleMouseOver = () => {
+    setShowContactList(true);
+  };
+
+  const handleMouseOut = () => {
+    setShowContactList(false);
   };
 
   return (
@@ -15,8 +23,9 @@ function Navbar() {
             <a href="/about-us">Sobre nosotros</a>
           </li>
           <li>
-            <a href="/contact-us">Contacto</a>
+            <a href="contact-us">Contacto</a>
           </li>
+
           <a href="/">
             <img className="logo" src="/Logo.jpg" alt="logo" />
           </a>

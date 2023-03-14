@@ -7,44 +7,69 @@
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #021f3f;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  .logo{
-    float: right;
-  }
-  .listaCompras{
-    float: right;
-    height: 2em;
-    margin-top: 6vh;
-  }
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #021f3f;
+}
 
-  li a{
-    position: relative;
-    margin-top:20px;
-    margin-left: 10px;
-  }
+li {
+  float: left;
+}
 
-  nav{
-    width: 100%;
-  }
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 16px; /* reducir el padding superior e inferior */
+  text-decoration: none;
+  line-height: 1; /* ajustar el line-height para evitar la superposición */
+}
 
 
+.logo {
+  float: right;
+}
+.listaCompras {
+  float: right;
+  height: 2em;
+  margin-top: 6vh;
+}
 
-  
+li a {
+  position: relative;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+nav {
+  width: 100%;
+}
+
+.contacto-item {
+  position: relative;
+}
+
+.contact-list {
+  display: block;
+  position: absolute;
+  background-color: #fff;
+  color: #021f3f;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 2px solid red;
+  border-radius: 4px;
+  z-index: 2000; /* Añadir un z-index mayor */
+}
+
+
+.contact-list > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: block; /* asegura que la lista se muestre verticalmente */
+}
+
+.contact-list li {
+  margin-top: 10px;
+}

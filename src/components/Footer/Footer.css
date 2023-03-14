@@ -1,16 +1,33 @@
-#footer{
+#footer {
   display: flex;
-  justify-content: center; /* Alinea horizontalmente el contenido en el centro */
-  align-items: center; /* Alinea verticalmente el contenido en el centro */
+  justify-content: center;
   margin: 0 auto;
   top: bottom;
   left: 0;
   right: 0;
-  z-index: 1000; 
+  z-index: 1000;
   min-height: 10vh;
   background-color: #021f3f;
   color: white;
-  
+  flex-direction: row; /* Añade esta línea para establecer la dirección a horizontal */
 }
 
+.redes {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end; /* Añade esta línea para separar los elementos del contenido */
+  margin-left: auto; /* Añade esta línea para empujar el contenido a la derecha */
+}
 
+.redes img {
+  max-width: 4.5vw;
+  max-height: 4.5vh;
+  margin: 5% 5%;
+}
+
+#footer p{
+  margin: 2% 10%;
+}
+a button{
+  background-color:#021f3f;
+}

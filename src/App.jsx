@@ -1,13 +1,12 @@
 import './App.css'
 import React from 'react'
 import Navbar from './components/navbar/Navbar'
-import Inicio from './components/Inicio/Inicio' 
 import Contacto from './components/Contacto/Contacto'
 import Footer from './components/Footer/Footer'
-import TarjetaProductos from './components/Tarjeta_Productos/tarjetaProductos'
 import Ventas from './components/Ventana_Venta/VentanaVenta'
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";  
+import Productos from './components/Productos/Productos'
+import Inicio from './components/Inicio/Inicio'
 
 function App() {
   return (
@@ -15,9 +14,10 @@ function App() {
       <Navbar/>
       <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Inicio/>} />
+          <Route path="/" element={<Inicio/>} />
+            <Route path="/ventas" element={<Productos/>} />
             <Route path="/contact-us" element={<Contacto/>} />
-            <Route path="/ventas" element={<Ventas/>} />
+            <Route path="/compras" element={<Ventas/>} />
           </Routes>
       </BrowserRouter>
       <Footer />

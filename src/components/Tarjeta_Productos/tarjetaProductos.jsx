@@ -14,9 +14,9 @@ function tarjetaProductos({data,addToCart}) {
     <div className="contenedor">
       <div className="containerTarjeta ">
         <header className="tituloTarjeta">{titulo}</header>
-        <img className="imgProducto" src={imagen} alt="Imagen de nevera"/>
+        <img className="imgProducto" src={imagen} alt="imege not found"/>
         <div className='precioTarjeta'> {formatPrice(precio)}</div>
-        <button className="botonAgregar" onClick={()=>addToCart(id)}><img className="imgCarrito" src="/src/components/Imagenes/Carrito.png"></img></button>
+        <button className="botonAgregar" onClick={()=>addToCart(id)}><img className="imgCarrito" src="/Carrito.png"></img></button>
         <div className="description">
           <p>{descripcion}</p>
         </div>
