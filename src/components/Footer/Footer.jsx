@@ -5,12 +5,12 @@ function Footer() {
       <p>Centro autorizado por Electrolux Colombia</p>
       <div className="redes">
         <a
-          href="https://www.facebook.com/ElectroluxColombia/"
+          href="https://es-la.facebook.com/people/Global-Electro-100/100069341773556/"
           target="_blank"
         >
           <button>
             <img
-              src="/src/components/Imagenes/facebook.png"
+              src="/facebook.png"
               alt="Facebook"
             ></img>
           </button>
@@ -21,18 +21,18 @@ function Footer() {
         >
           <button>
             <img
-              src="/src/components/Imagenes/instagram.png"
+              src="/instagram.png"
               alt="Instagram"
             ></img>
           </button>
         </a>
         <a
-          href="https://api.whatsapp.com/send/?phone=573160250327&text=Necesito+mayor+informaci%C3%B3n%21&type=phone_number&app_absent=0"
+          href="https://api.whatsapp.com/send/?phone=573204809394&text&type=phone_number&app_absent=0"
           target="_blank"
         >
           <button>
             <img
-              src="/src/components/Imagenes/whatsapp.png"
+              src="/whatsapp.png"
               alt="WhatsApp"
             ></img>
           </button>

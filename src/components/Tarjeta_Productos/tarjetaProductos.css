@@ -1,7 +1,7 @@
 .contenedor {
   display: inline-block;
   min-width: 110px;
-  width: 10vw;
+  width: 30vw;
   margin: 10px;
 }
 
@@ -21,12 +21,12 @@
   font-weight: bold;
   font-family: "Playfair Display", serif;
   color: white;
+  font-size: medium;
 }
 
 .imgProducto {
-  min-width: 70px;
-  width: 8vw;
-  height: 100px;
+  max-width: 40%;
+  height: auto;
 }
 
 .precioTarjeta {
